@@ -1,0 +1,19 @@
+{
+  "name": "calculo-numerologia-online",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm jest",
+    "dev": "nodemon index.js"
+  },
+  "author": "Pedro Vieira",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
