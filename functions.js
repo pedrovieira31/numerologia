@@ -8,10 +8,10 @@ module.exports = {
     calculateName: function (name) {
         let nameArray = [...name];
         nameArray.forEach(function(char, index) {
-            if (this.vogalCharacter(char)) {
+            if (this.vowelCharacter(char)) {
                 console.log(char + ": vogal")
             }
-            else if (this.consoantCharacter(char)) {
+            else if (this.consonantCharacter(char)) {
                 console.log(char + ": consoante")
             }
             else {
@@ -20,31 +20,17 @@ module.exports = {
         }.bind(this));
     },
 
-    vogalCharacter(char) {
-        let isVogal = false;
-        if (char == 'A' || char == 'E' || char == 'I' || char == 'O' || char == 'U') {
-            isVogal = true;
-        }
-        else {
-            isVogal = false;
-        }
-        return isVogal;
+    vowelCharacter(char) {
+        let str = "AEIOU";
+        return (str.indexOf(char) != -1) ? true : false;
     },
 
-    consoantCharacter(char) {
-        let isConsoant = false;
-        if (char == 'B' || char == 'C' || char == 'D' || char == 'F' || char == 'G' || char == 'H' || char == 'J' ||
-            char == 'K' || char == 'L' || char == 'M' || char == 'N' || char == 'P' || char == 'Q' || char == 'R' ||
-            char == 'S' || char == 'T' || char == 'V' || char == 'S' || char == 'X' || char == 'W' || char == 'Z') {
-            isConsoant = true;
-        }
-        else {
-            isConsoant = false;
-        }
-        return isConsoant;
+    consonantCharacter(char) {
+        let str = "BCDFGHJKLMNPQRSTVWXZ";
+        return (str.indexOf(char) != -1) ? true : false;
     },
 
-    vogalValue(char) {
+    vowelValue(char) {
         switch (char) {
             case 'A':
                 //MO += 1
@@ -67,7 +53,7 @@ module.exports = {
         }
     },
 
-    consoantValue(char) {
+    consonantValue(char) {
         if (char == 'B' || char == 'K' || char == 'T') {
             //EU = 2
         }
