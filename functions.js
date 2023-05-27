@@ -5,28 +5,29 @@ module.exports = {
         return birthDate;
     },
 
-    calculateName: function (name) {
-        let nameArray = [...name];
-        nameArray.forEach(function(char, index) {
-            if (this.vowelCharacter(char)) {
-                console.log(char + ": vogal")
-            }
-            else if (this.consonantCharacter(char)) {
-                console.log(char + ": consoante")
-            }
-            else {
-                this.yValue(nameArray, index);
-            }
+    calculateName: function (fullName) {
+        let fullNameArray = fullName.split(' ');
+        fullNameArray.forEach(function (name) {
+            let nameArray = [...name];
+            nameArray.forEach(function (char, charIndex) {
+                if (char == 'Y') {
+                    this.yValue(char, nameArray, charIndex, name);
+                }
+                else if (this.vowelCharacter(char)) {
+                    console.log(char + ": vogal")
+                    this.vowelValue(char);
+                }
+                else {
+                    console.log(char + ": consoante")
+                    this.consonantValue(char);
+                }
+
+            }.bind(this));
         }.bind(this));
     },
 
     vowelCharacter(char) {
         let str = "AEIOU";
-        return (str.indexOf(char) != -1) ? true : false;
-    },
-
-    consonantCharacter(char) {
-        let str = "BCDFGHJKLMNPQRSTVWXZ";
         return (str.indexOf(char) != -1) ? true : false;
     },
 
@@ -54,36 +55,68 @@ module.exports = {
     },
 
     consonantValue(char) {
-        if (char == 'B' || char == 'K' || char == 'T') {
-            //EU = 2
+
+        if (char == 'J' || char == 'S') {
+            //EU += 1
+        }
+        else if (char == 'B' || char == 'K' || char == 'T') {
+            //EU += 2
         }
         else if (char == 'C' || char == 'L') {
-            //EU = 3
+            //EU += 3
         }
         else if (char == 'D' || char == 'M' || char == 'V') {
-            //EU = 4
+            //EU += 4
         }
         else if (char == 'N' || char == 'W') {
-            //EU = 5
+            //EU += 5
         }
         else if (char == 'F' || char == 'X') {
-            //EU = 6
+            //EU += 6
         }
         else if (char == 'G' || char == 'P') {
-            //EU = 7
+            //EU += 7
         }
         else if (char == 'H' || char == 'Q' || char == 'Z') {
-            //EU = 8
-        }
-        else if (char == 'J' || char == 'S') {
-            //EU = 1
+            //EU += 8
         }
         else {
-            //EU = 9
+            //EU += 9
         }
     },
 
-    yValue(nameArray,index) {
+    yValue(char, nameArray, charIndex, name) {
+
+        // Y INICIO DO NOME
+        if(char = nameArray[0] && this.vowelCharacter(nameArray(charIndex + 1))){
+            //EU += 7
+        }
+        else if(char = nameArray[0] && !this.vowelCharacter(nameArray(charIndex + 1))){
+            //MO += 7
+        }
+        // Y FINAL DO NOME
+        else if(char = nameArray[name.length] && this.vowelCharacter(nameArray(charIndex - 1))){
+            //EU += 7
+        }
+        else if(char = nameArray[name.length] && !this.vowelCharacter(nameArray(charIndex - 1))){
+            //MO += 7
+        }
+        // Y ENTRE VOGAIS
+        else if(this.vowelCharacter(nameArray(charIndex - 1)) && this.vowelCharacter(nameArray(charIndex + 1))){
+            //EU += 7
+        }
+        // Y ENTRE CONSOANTES
+        else if(!this.vowelCharacter(nameArray(charIndex - 1)) && !this.vowelCharacter(nameArray(charIndex + 1))){
+            //MO += 7
+        }
+        // Y ENTRE VOGAL E CONSOANTE
+        else if(this.vowelCharacter(nameArray(charIndex - 1)) && !this.vowelCharacter(nameArray(charIndex + 1))){
+            //EU += 7
+        }
+        // Y ENTRE CONSOANTE E VOGAL
+        else if(!this.vowelCharacter(nameArray(charIndex - 1)) && this.vowelCharacter(nameArray(charIndex + 1))){
+            //MO += 7
+        }
     }
 }
 
