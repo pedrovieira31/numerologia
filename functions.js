@@ -1,8 +1,13 @@
 module.exports = {
     calculateNameDate: function (request) {
         let birthDate = new Date(request.date);
-        this.calculateName(request.name.toUpperCase());
+        let name = this.removeAccents(request.name.toUpperCase());
+        this.calculateName(name);
         return birthDate;
+    },
+
+    removeAccents: function (str) {
+        return str.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
     },
 
     calculateName: function (fullName) {
@@ -28,7 +33,7 @@ module.exports = {
 
     vowelCharacter(char) {
         let str = "AEIOU";
-        return (str.indexOf(char) != -1) ? true : false;
+        return (str.indexOf(char) != -1);
     },
 
     vowelValue(char) {
@@ -87,36 +92,28 @@ module.exports = {
 
     yValue(char, nameArray, charIndex, name) {
 
-        // Y INICIO DO NOME
-        if(char = nameArray[0] && this.vowelCharacter(nameArray(charIndex + 1))){
+        const fistLetter = char == nameArray[0];
+        const lastLetter = char == nameArray[name.length];
+        const nextIsVowel = this.vowelCharacter(nameArray[charIndex + 1]);
+        const previousIsVowel = this.vowelCharacter(nameArray[charIndex - 1]);
+        const nextIsConsonant = !this.vowelCharacter(nameArray[charIndex + 1]);
+        const previousIsConsonant = !this.vowelCharacter(nameArray[charIndex - 1]);
+
+        if ((fistLetter && nextIsVowel) ||
+            (lastLetter && previousIsVowel) ||
+            (previousIsVowel && nextIsVowel) ||
+            (previousIsVowel && nextIsConsonant)) {
+            console.log("EU += 7");
             //EU += 7
         }
-        else if(char = nameArray[0] && !this.vowelCharacter(nameArray(charIndex + 1))){
+        else if ((fistLetter && nextIsConsonant) ||
+            (lastLetter && previousIsConsonant) ||
+            (previousIsConsonant && nextIsConsonant) ||
+            (previousIsConsonant && nextIsVowel)) {
+            console.log("MO += 7");
             //MO += 7
         }
-        // Y FINAL DO NOME
-        else if(char = nameArray[name.length] && this.vowelCharacter(nameArray(charIndex - 1))){
-            //EU += 7
-        }
-        else if(char = nameArray[name.length] && !this.vowelCharacter(nameArray(charIndex - 1))){
-            //MO += 7
-        }
-        // Y ENTRE VOGAIS
-        else if(this.vowelCharacter(nameArray(charIndex - 1)) && this.vowelCharacter(nameArray(charIndex + 1))){
-            //EU += 7
-        }
-        // Y ENTRE CONSOANTES
-        else if(!this.vowelCharacter(nameArray(charIndex - 1)) && !this.vowelCharacter(nameArray(charIndex + 1))){
-            //MO += 7
-        }
-        // Y ENTRE VOGAL E CONSOANTE
-        else if(this.vowelCharacter(nameArray(charIndex - 1)) && !this.vowelCharacter(nameArray(charIndex + 1))){
-            //EU += 7
-        }
-        // Y ENTRE CONSOANTE E VOGAL
-        else if(!this.vowelCharacter(nameArray(charIndex - 1)) && this.vowelCharacter(nameArray(charIndex + 1))){
-            //MO += 7
-        }
+
     }
 }
 
