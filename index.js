@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
+const func = require("./functions.js");
 
 dotenv.config();
 
@@ -17,9 +18,9 @@ app.get('/', (req, res) => {
   res.send('Express + TypeScript Server');
 });
 
-app.post('/GetNameDate', function (req, res) {
-  console.log(JSON.stringify(req.body));
-  res.send(JSON.stringify(req.body));
+app.post('/getNameDate', function (req, res) {
+  let request = req.body;
+  res.send(func.calculateNameDate(request));
 })
 
 app.listen(port, () => {
