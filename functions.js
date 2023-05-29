@@ -1,11 +1,16 @@
 module.exports = {
+
+    numerologyMap: {
+        MO: 0, EU: 0, CD: 0, D1: 0, D2: 0, C1: 0, C2: 0, C3: 0, D1: 0, D2: 0, DM: 0, R1: 0, R2: 0, R3: 0, R4: 0, IR1: 0, IR2: 0, IRR2: 0, IR3: 0, IRR3: 0, IR4: 0, personalYear: 0
+    },
+
     calculateNameDate: function (request) {
 
         let birthDate = new Date(request.date);
         let name = this.removeAccents(request.name.toUpperCase());
-        //this.calculateName(name);
-        //this.calculateDate(birthDate);
-        return birthDate;
+        this.calculateName(name);
+        this.calculateDate(birthDate);
+        return this.numerologyMap;
     },
 
     removeAccents: function (str) {
@@ -25,10 +30,13 @@ module.exports = {
                 else if (this.vowelCharacter(char)) {
                     console.log(char + ": vogal")
                     this.vowelValue(char);
+                    this.numerologyMap.MO = this.valueReducer(this.numerologyMap.MO);
+
                 }
                 else {
                     console.log(char + ": consoante")
                     this.consonantValue(char);
+                    this.numerologyMap.EU = this.valueReducer(this.numerologyMap.EU);
                 }
 
             }.bind(this));
@@ -37,34 +45,33 @@ module.exports = {
 
     calculateDate: function (birthDate) {
 
+        const numerologyMap = this.numerologyMap;
+        const valueReducer = this.valueReducer;
         let day, month, year;
         const currentDate = new Date();
-        day = this.valueReducer(birthDate.getDate());
-        month = this.valueReducer(birthDate.getMonth() + 1);
-        year = this.valueReducer(birthDate.getFullYear());
 
-        //CD = this.valueReducer(day + month + year);
-        //D1 = this.valueReducer(day - month);
-        //D2 = this.valueReducer(month - year);
-        //DM = this.valueReducer(D1 - D2);
-        //C1 = day;
-        //C2 = month;
-        //C3 = year;
-        //R1 = this.valueReducer(day + month);
-        //R2 = this.valueReducer(day + year);
-        //R3 = this.valueReducer(R1 + R2);
-        //R4 = this.valueReducer(month + year);
-        //IR1 = Math.abs(CD - 36);
-        //IR2 = IR1 + 1;
-        //IRR2 = IR2 + 9;
+        day = valueReducer(birthDate.getDate());
+        month = valueReducer(birthDate.getMonth() + 1);
+        year = valueReducer(birthDate.getFullYear());
 
-        //IR3 = IRR2 + 1;
-        //IRR3 = IR3 + 9;
-
-        //IR4 = IRR3 + 1;
-
-        
-        //personalYear = this.valueReducer(day + month + year);
+        numerologyMap.CD = valueReducer(day + month + year);
+        numerologyMap.D1 = valueReducer(day - month);
+        numerologyMap.D2 = valueReducer(month - year);
+        numerologyMap.DM = valueReducer(numerologyMap.D1 - numerologyMap.D2);
+        numerologyMap.C1 = day;
+        numerologyMap.C2 = month;
+        numerologyMap.C3 = year;
+        numerologyMap.R1 = valueReducer(day + month);
+        numerologyMap.R2 = valueReducer(day + year);
+        numerologyMap.R3 = valueReducer(numerologyMap.R1 + numerologyMap.R2);
+        numerologyMap.R4 = valueReducer(month + year);
+        numerologyMap.IR1 = valueReducer(Math.abs(numerologyMap.CD - 36));
+        numerologyMap.IR2 = valueReducer(numerologyMap.IR1 + 1);
+        numerologyMap.IRR2 = valueReducer(numerologyMap.IR2 + 9);
+        numerologyMap.IR3 = valueReducer(numerologyMap.IRR2 + 1);
+        numerologyMap.IRR3 = valueReducer(numerologyMap.IR3 + 9);
+        numerologyMap.IR4 = valueReducer(numerologyMap.IRR3 + 1);
+        numerologyMap.personalYear = valueReducer(day + month + year);
     },
 
     vowelCharacter(char) {
@@ -77,22 +84,22 @@ module.exports = {
 
         switch (char) {
             case 'A':
-                //MO += 1
+                this.numerologyMap.MO += 1;
                 break;
             case 'E':
-                //MO += 5
+                this.numerologyMap.MO += 5
                 break;
             case 'I':
-                //MO += 9
+                this.numerologyMap.MO += 9
                 break;
             case 'O':
-                //MO += 6
+                this.numerologyMap.MO += 6
                 break;
             case 'U':
-                //MO += 3
+                this.numerologyMap.MO += 3
                 break;
             default:
-                //MO += 0
+                this.numerologyMap.MO += 0
                 break;
         }
     },
@@ -100,31 +107,31 @@ module.exports = {
     consonantValue(char) {
 
         if (char == 'J' || char == 'S') {
-            //EU += 1
+            this.numerologyMap.EU += 1
         }
         else if (char == 'B' || char == 'K' || char == 'T') {
-            //EU += 2
+            this.numerologyMap.EU += 2
         }
         else if (char == 'C' || char == 'L') {
-            //EU += 3
+            this.numerologyMap.EU += 3
         }
         else if (char == 'D' || char == 'M' || char == 'V') {
-            //EU += 4
+            this.numerologyMap.EU += 4
         }
         else if (char == 'N' || char == 'W') {
-            //EU += 5
+            this.numerologyMap.EU += 5
         }
         else if (char == 'F' || char == 'X') {
-            //EU += 6
+            this.numerologyMap.EU += 6
         }
         else if (char == 'G' || char == 'P') {
-            //EU += 7
+            this.numerologyMap.EU += 7
         }
         else if (char == 'H' || char == 'Q' || char == 'Z') {
-            //EU += 8
+            this.numerologyMap.EU += 8
         }
         else {
-            //EU += 9
+            this.numerologyMap.EU += 9
         }
     },
 
@@ -141,21 +148,21 @@ module.exports = {
             (lastLetter && previousIsVowel) ||
             (previousIsVowel && nextIsVowel) ||
             (previousIsVowel && nextIsConsonant)) {
-            console.log("EU += 7");
-            //EU += 7
+            console.log(char + ": consoante");
+            this.numerologyMap.EU += 7
         }
         else if ((fistLetter && nextIsConsonant) ||
             (lastLetter && previousIsConsonant) ||
             (previousIsConsonant && nextIsConsonant) ||
             (previousIsConsonant && nextIsVowel)) {
-            console.log("MO += 7");
-            //MO += 7
+            console.log(char + ": vogal");
+            this.numerologyMap.MO += 7
         }
 
     },
 
     valueReducer(value) {
-
+        
         value = Math.abs(value);
         const arrValue = Array.from(value.toString()).map(Number);
         let reducedValue = arrValue.reduce(function (acc, current) {
