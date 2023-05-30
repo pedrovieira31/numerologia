@@ -27,7 +27,8 @@ class Numerologia {
     personalYear: 0,
   };
 
-  constructor({ birthDate, name }) {
+  constructor(props) {
+    const { birthDate, name } = props || { birthDate: "", name: "" };
     this.birthDate = birthDate;
     this.name = name;
   }
@@ -181,6 +182,10 @@ class Numerologia {
       return acc;
     });
     return reducedValue;
+  }
+
+  tanga() {
+    return "Hello work=ld";
   }
 
   // calculateTrimester(birthDate) {}
