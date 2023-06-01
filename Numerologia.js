@@ -29,8 +29,8 @@ class Numerologia {
 
   constructor(props) {
     const { birthDate, name } = props || { birthDate: "", name: "" };
-    this.birthDate = birthDate;
-    this.name = name;
+    this.birthDate = new Date(birthDate);
+    this.name = name.toUpperCase();
   }
 
   calculateNameDate() {
@@ -51,11 +51,9 @@ class Numerologia {
         if (char == "Y") {
           this.yValue(char, nameArray, charIndex, name);
         } else if (this.vowelCharacter(char)) {
-          console.log(char + ": vogal");
           this.vowelValue(char);
           this.mapResponse.MO = this.valueReducer(this.mapResponse.MO);
         } else {
-          console.log(char + ": consoante");
           this.consonantValue(char);
           this.mapResponse.EU = this.valueReducer(this.mapResponse.EU);
         }
@@ -77,20 +75,20 @@ class Numerologia {
     mapResponse.D1 = valueReducer(day - month);
     mapResponse.D2 = valueReducer(month - year);
     mapResponse.DM = valueReducer(mapResponse.D1 - mapResponse.D2);
-    mapResponse.C1 = day;
-    mapResponse.C2 = month;
+    mapResponse.C1 = month;
+    mapResponse.C2 = day;
     mapResponse.C3 = year;
     mapResponse.R1 = valueReducer(day + month);
     mapResponse.R2 = valueReducer(day + year);
     mapResponse.R3 = valueReducer(mapResponse.R1 + mapResponse.R2);
     mapResponse.R4 = valueReducer(month + year);
-    mapResponse.IR1 = valueReducer(Math.abs(mapResponse.CD - 36));
-    mapResponse.IR2 = valueReducer(mapResponse.IR1 + 1);
-    mapResponse.IRR2 = valueReducer(mapResponse.IR2 + 9);
-    mapResponse.IR3 = valueReducer(mapResponse.IRR2 + 1);
-    mapResponse.IRR3 = valueReducer(mapResponse.IR3 + 9);
-    mapResponse.IR4 = valueReducer(mapResponse.IRR3 + 1);
-    mapResponse.personalYear = valueReducer(day + month + year);
+    // mapResponse.IR1 = valueReducer(Math.abs(mapResponse.CD - 36));
+    // mapResponse.IR2 = valueReducer(mapResponse.IR1 + 1);
+    // mapResponse.IRR2 = valueReducer(mapResponse.IR2 + 9);
+    // mapResponse.IR3 = valueReducer(mapResponse.IRR2 + 1);
+    // mapResponse.IRR3 = valueReducer(mapResponse.IR3 + 9);
+    // mapResponse.IR4 = valueReducer(mapResponse.IRR3 + 1);
+    // mapResponse.personalYear = valueReducer(day + month + year);
   }
 
   vowelCharacter(char) {
@@ -157,7 +155,7 @@ class Numerologia {
       (previousIsVowel && nextIsVowel) ||
       (previousIsVowel && nextIsConsonant)
     ) {
-      console.log(char + ": consoante");
+      // console.log(char + ": consoante");
       this.mapResponse.EU += 7;
     } else if (
       (fistLetter && nextIsConsonant) ||
@@ -165,7 +163,7 @@ class Numerologia {
       (previousIsConsonant && nextIsConsonant) ||
       (previousIsConsonant && nextIsVowel)
     ) {
-      console.log(char + ": vogal");
+      // console.log(char + ": vogal");
       this.mapResponse.MO += 7;
     }
   }
