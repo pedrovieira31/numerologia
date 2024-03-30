@@ -11,20 +11,18 @@ test("class is defined", () => {
     C1: 8,
     C2: 4,
     C3: 8,
-    D1: 4,
-    D2: 0,
     DM: 4,
     R1: 3,
     R2: 3,
     R3: 6,
     R4: 7,
-    IR1: 0,
-    IR2: 0,
-    IRR2: 0,
-    IR3: 0,
-    IRR3: 0,
-    IR4: 0,
-    personalYear: 0
+    IR1: 7,
+    IR2: 8,
+    IRR2: 8,
+    IR3: 9,
+    IRR3: 9,
+    IR4: 1,
+    personalYear: 2
   };
   const value = numerology.calculateNameDate();
   expect(value).toStrictEqual(expectedReturn);

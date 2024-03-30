@@ -25,7 +25,6 @@ app.post("/getNameDate", function (req, res) {
   let request = req.body;
   let birthDate = new Date(request.date);
   let name = request.name.toUpperCase();
-  console.log(name);
   let response = new Numerologia({ birthDate, name }).calculateNameDate();
   res.send(response);
 });

@@ -6,8 +6,6 @@ class Numerologia {
     MO: 0,
     EU: 0,
     CD: 0,
-    D1: 0,
-    D2: 0,
     C1: 0,
     C2: 0,
     C3: 0,
@@ -30,7 +28,7 @@ class Numerologia {
   constructor(props) {
     const { birthDate, name } = props || { birthDate: "", name: "" };
     this.birthDate = new Date(birthDate);
-    this.name = name.toUpperCase();
+    this.name = this.removeAccents(name.toUpperCase());
   }
 
   calculateNameDate() {
@@ -82,13 +80,13 @@ class Numerologia {
     mapResponse.R2 = valueReducer(day + year);
     mapResponse.R3 = valueReducer(mapResponse.R1 + mapResponse.R2);
     mapResponse.R4 = valueReducer(month + year);
-    // mapResponse.IR1 = valueReducer(Math.abs(mapResponse.CD - 36));
-    // mapResponse.IR2 = valueReducer(mapResponse.IR1 + 1);
-    // mapResponse.IRR2 = valueReducer(mapResponse.IR2 + 9);
-    // mapResponse.IR3 = valueReducer(mapResponse.IRR2 + 1);
-    // mapResponse.IRR3 = valueReducer(mapResponse.IR3 + 9);
-    // mapResponse.IR4 = valueReducer(mapResponse.IRR3 + 1);
-    // mapResponse.personalYear = valueReducer(day + month + year);
+    mapResponse.IR1 = valueReducer(Math.abs(mapResponse.CD - 36));
+    mapResponse.IR2 = valueReducer(mapResponse.IR1 + 1);
+    mapResponse.IRR2 = valueReducer(mapResponse.IR2 + 9);
+    mapResponse.IR3 = valueReducer(mapResponse.IRR2 + 1);
+    mapResponse.IRR3 = valueReducer(mapResponse.IR3 + 9);
+    mapResponse.IR4 = valueReducer(mapResponse.IRR3 + 1);
+    mapResponse.personalYear = valueReducer(day + month + year);
   }
 
   vowelCharacter(char) {
