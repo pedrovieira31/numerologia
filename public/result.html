@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Numerológico - Resultado</title>
+    <link rel="stylesheet" href="NumerologyChart.css">
+</head>
+
+<body class="numerology-container">
+    <header class="numerology-header">
+        <h1>Quero uma análise com a Raquel Vieira</h1>
+        <h2>Seu Mapa Numerológico:</h2>
+        <h3>(Your Numerology Chart)</h3>
+    </header>
+
+    <main class="main-content">
+
+        <section class="energies-section">
+            <h2>Suas Principais Energias:</h2>
+            <h3>(Your main Energies):</h3>
+            <div class="energy-grid">
+                <div class="energy-card">
+                    <h4>Propósito (Life Path)</h4>
+                    <p id="lifePath"></p>
+                </div>
+                <div class="energy-card">
+                    <h4>Alma (Soul)</h4>
+                    <p id="soul"></p>
+
+                </div>
+                <div class="energy-card">
+                    <h4>Sonho (Dream)</h4>
+                    <p id="dream"></p>
+
+                </div>
+                <div class="energy-card">
+                    <h4>Expressão (Expression)</h4>
+                    <p id="expression"></p>
+
+                </div>
+                <div class="energy-card">
+                    <h4>Aprendizado de Vida (Life Challenge)</h4>
+                    <p id="lifeChallenge"></p>
+
+                </div>
+                <div class="energy-card">
+                    <h4>Dom (Gift)</h4>
+                    <p id="gift"></p>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="secondary-energies">
+            <h2>Energias secundárias, mudam de acordo com a sua idade:</h2>
+            <h3>(Energies that vary according with your age):</h3>
+            <div class="energy-grid">
+                <div class="energy-card">
+                    <h4>Ciclo de Plantio (Planting fase)</h4>
+                    <p>Idade - Age: 0-28</p>
+                    <p id="ageFirst"></p>
+
+                </div>
+                <div class="energy-card">
+                    <h4>Ciclo de Cultivo (Cultivating fase)</h4>
+                    <p>Idade - Age: 29-56</p>
+                    <p id="ageSecond"></p>
+
+                </div>
+                <div class="energy-card">
+                    <h4>Ciclo da Colheita (Harvesting fase)</h4>
+                    <p>Idade - Age: 57+</p>
+                    <p id="ageThird"></p>
+          
+        </div>
+      </div>
+    </section>
+
+    <section class=" gifts-section">
+                    <h2>Presentes que o Universo te traz:</h2>
+                    <h3>(Gifts that you will receive from the Universe):</h3>
+                    <div class="energy-grid">
+                        <div class="energy-card">
+                            <h4>Primeiro Presente (First Gift)</h4>
+                            <p>Idade - Age:</p>
+                            <p id="firstGift"></p>
+                        </div>
+                        <div class="energy-card">
+                            <h4>Segundo Presente (Second Gift)</h4>
+                            <p>Idade - Age:</p>
+                            <p id="secondGift"></p>
+                        </div>
+                        <div class="energy-card">
+                            <h4>Terceiro Presente (Third Gift)</h4>
+                            <p>Idade - Age:</p>
+                            <p id="thirdGift"></p>
+
+                        </div>
+                        <div class="energy-card">
+                            <h4>Quarto Presente (Fourth Gift)</h4>
+                            <p>Idade - Age:</p>
+                            <p id="fourthGift"></p>
+
+                        </div>
+                    </div>
+        </section>
+    </main>
+</body>
+<script>
+    // Acessa o objeto armazenado no localStorage
+    const numerologyData = JSON.parse(localStorage.getItem('numerologyResult'));
+    console.log("retorno: " + numerologyData);
+    // Verifica se os dados estão presentes no localStorage
+    if (numerologyData) {
+        console.log("retorno: " + numerologyData);
+        // Preenche os valores nas energias principais
+        document.getElementById('lifePath').textContent = numerologyData.CD;
+        document.getElementById('soul').textContent = numerologyData.MO;
+        document.getElementById('dream').textContent = numerologyData.EU;
+        document.getElementById('expression').textContent = numerologyData.MO + numerologyData.EU;//REVISAR
+        document.getElementById('lifeChallenge').textContent = numerologyData.DM;
+        document.getElementById('gift').textContent = numerologyData.CD + numerologyData.MO;//REVISAR
+
+        // Preenche os valores nas energias secundárias
+        document.getElementById('ageFirst').textContent = numerologyData.C1;
+        document.getElementById('ageSecond').textContent = numerologyData.C2;
+        document.getElementById('ageThird').textContent = numerologyData.C3;
+
+        // Preenche os valores dos presentes
+        document.getElementById('firstGift').textContent = numerologyData.R1;
+        document.getElementById('secondGift').textContent = numerologyData.R2;
+        document.getElementById('thirdGift').textContent = numerologyData.R3;
+        document.getElementById('fourthGift').textContent = numerologyData.R4;
+    }
+</script>
+
+</html>

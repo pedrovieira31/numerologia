@@ -1,0 +1,144 @@
+/* Estilo geral da página */
+.numerology-container {
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(to bottom, #4a90e2, #9013fe);
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cabeçalho */
+.numerology-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.numerology-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.numerology-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #d1c4e9;
+}
+
+/* Conteúdo principal */
+.numerology-content {
+  max-width: 600px;
+  text-align: justify;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.numerology-content p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Formulário */
+.numerology-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #9013fe;
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  border-color: #4a90e2;
+  outline: none;
+  color: #9013fe;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.form-button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #ffffff;
+  background: #4a90e2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-button:hover {
+  background: #357abd;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f5;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #4a4a8c;
+}
+
+.header h2,
+.header h3 {
+  font-size: 1.5rem;
+  color: #6a6a9e;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.energy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.energy-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.energy-card h4 {
+  font-size: 1.2rem;
+  color: #4a4a8c;
+}
+
+.energy-card p {
+  margin: 5px 0;
+  color: #555;
+}

@@ -3,11 +3,13 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 // const func = require("./functions.js");
 const Numerologia = require("./Numerologia.js");
+const path = require("path");
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(
   bodyParser.urlencoded({
@@ -18,10 +20,10 @@ app.use(
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.send("Express + TypeScript Server");
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.post("/getNameDate", function (req, res) {
+app.post("/api/numerology", function (req, res) {
   let request = req.body;
   let birthDate = new Date(request.date);
   let name = request.name.toUpperCase();
