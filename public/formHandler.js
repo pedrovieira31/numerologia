@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 6, , 7]);
-                    return [4 /*yield*/, fetch('http://localhost:1490/api/numerology', {
+                    return [4 /*yield*/, fetch('https://mapa-site-84fa1.web.app/api/numerology', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
