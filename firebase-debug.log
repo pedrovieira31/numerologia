@@ -1,0 +1,74 @@
+[debug] [2025-02-07T23:56:44.614Z] ----------------------------------------------------------------------
+[debug] [2025-02-07T23:56:44.617Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pviei\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-02-07T23:56:44.617Z] CLI Version:   13.30.0
+[debug] [2025-02-07T23:56:44.617Z] Platform:      win32
+[debug] [2025-02-07T23:56:44.617Z] Node Version:  v22.12.0
+[debug] [2025-02-07T23:56:44.618Z] Time:          Fri Feb 07 2025 20:56:44 GMT-0300 (Brasilia Standard Time)
+[debug] [2025-02-07T23:56:44.618Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-07T23:56:44.856Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-07T23:56:44.856Z] > authorizing via signed-in user (pvieiragontijo@gmail.com)
+[debug] [2025-02-07T23:56:44.857Z] [iam] checking project mapa-site-84fa1 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-02-07T23:56:44.858Z] Checked if tokens are valid: true, expires at: 1738974046001
+[debug] [2025-02-07T23:56:44.858Z] Checked if tokens are valid: true, expires at: 1738974046001
+[debug] [2025-02-07T23:56:44.860Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mapa-site-84fa1:testIamPermissions [none]
+[debug] [2025-02-07T23:56:44.860Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mapa-site-84fa1:testIamPermissions x-goog-quota-user=projects/mapa-site-84fa1
+[debug] [2025-02-07T23:56:44.860Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mapa-site-84fa1:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-07T23:56:45.908Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mapa-site-84fa1:testIamPermissions 200
+[debug] [2025-02-07T23:56:45.908Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mapa-site-84fa1:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-07T23:56:45.910Z] Checked if tokens are valid: true, expires at: 1738974046001
+[debug] [2025-02-07T23:56:45.910Z] Checked if tokens are valid: true, expires at: 1738974046001
+[debug] [2025-02-07T23:56:45.911Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mapa-site-84fa1 [none]
+[debug] [2025-02-07T23:56:46.398Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mapa-site-84fa1 200
+[debug] [2025-02-07T23:56:46.399Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mapa-site-84fa1 {"projectId":"mapa-site-84fa1","projectNumber":"903204551237","displayName":"mapa-site","name":"projects/mapa-site-84fa1","resources":{"hostingSite":"mapa-site-84fa1"},"state":"ACTIVE","etag":"1_12c263d3-5b6f-44b3-afbc-57cab51132e2"}
+[info] 
+[info] === Deploying to 'mapa-site-84fa1'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-02-07T23:56:46.418Z] Checked if tokens are valid: true, expires at: 1738974046001
+[debug] [2025-02-07T23:56:46.418Z] Checked if tokens are valid: true, expires at: 1738974046001
+[debug] [2025-02-07T23:56:46.419Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mapa-site-84fa1/versions [none]
+[debug] [2025-02-07T23:56:46.419Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mapa-site-84fa1/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-02-07T23:56:48.342Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mapa-site-84fa1/versions 200
+[debug] [2025-02-07T23:56:48.342Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mapa-site-84fa1/versions {"name":"projects/903204551237/sites/mapa-site-84fa1/versions/37b4ea78ded91b5d","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[mapa-site-84fa1]: beginning deploy... 
+[info] i  hosting[mapa-site-84fa1]: found 5 files in public 
+[debug] [2025-02-07T23:56:48.359Z] [hosting] uploading with 200 concurrency
+[debug] [2025-02-07T23:56:48.364Z] Checked if tokens are valid: true, expires at: 1738974046001
+[debug] [2025-02-07T23:56:48.364Z] Checked if tokens are valid: true, expires at: 1738974046001
+[debug] [2025-02-07T23:56:48.365Z] [hosting] hash cache [cHVibGlj] stored for 5 files
+[debug] [2025-02-07T23:56:48.366Z] [hosting][hash queue][FINAL] {"max":1,"min":1,"avg":1,"active":0,"complete":5,"success":5,"errored":0,"retried":0,"total":5,"elapsed":4}
+[debug] [2025-02-07T23:56:48.366Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/903204551237/sites/mapa-site-84fa1/versions/37b4ea78ded91b5d:populateFiles [none]
+[debug] [2025-02-07T23:56:48.366Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/903204551237/sites/mapa-site-84fa1/versions/37b4ea78ded91b5d:populateFiles {"files":{"/result.html":"00bacebaeec893b319d3c44ba7c859f6bc6f4b93be063d524a8071de987d3d70","/NumerologyChart.css":"e06d91afc431f3cad38959b0a62cbc0f0ab6cf68dcf8785b7eea98e9ff076a8f","/index.html":"95dd4f784392f5d055208731b809f345d293e9ddc28963abb87d5b34a0f7f80f","/formHandler.ts":"eadeac45400811d3c7da11e4fa3c315d85373004509b0bc3984d4b1ddee0b8d4","/formHandler.js":"9fda4a7c05b7403ce3a0d7bde23feee930a01a75f26c36583b39d6067cf9cc1c"}}
+[debug] [2025-02-07T23:56:49.061Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/903204551237/sites/mapa-site-84fa1/versions/37b4ea78ded91b5d:populateFiles 200
+[debug] [2025-02-07T23:56:49.062Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/903204551237/sites/mapa-site-84fa1/versions/37b4ea78ded91b5d:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/mapa-site-84fa1/versions/37b4ea78ded91b5d/files"}
+[debug] [2025-02-07T23:56:49.062Z] [hosting][populate queue][FINAL] {"max":698,"min":698,"avg":698,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":698}
+[debug] [2025-02-07T23:56:49.063Z] [hosting] uploads queued: 0
+[debug] [2025-02-07T23:56:49.063Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1738972609063}
+[info] +  hosting[mapa-site-84fa1]: file upload complete 
+[debug] [2025-02-07T23:56:49.066Z] [hosting] deploy completed after 718ms
+[debug] [2025-02-07T23:56:49.067Z] [
+  {
+    "config": {
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "mapa-site-84fa1"
+    },
+    "version": "projects/903204551237/sites/mapa-site-84fa1/versions/37b4ea78ded91b5d"
+  }
+]
+[info] i  hosting[mapa-site-84fa1]: finalizing version... 
+[debug] [2025-02-07T23:56:49.074Z] Checked if tokens are valid: true, expires at: 1738974046001
+[debug] [2025-02-07T23:56:49.074Z] Checked if tokens are valid: true, expires at: 1738974046001
+[debug] [2025-02-07T23:56:49.075Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mapa-site-84fa1/versions/37b4ea78ded91b5d updateMask=status%2Cconfig
+[debug] [2025-02-07T23:56:49.076Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/mapa-site-84fa1/versions/37b4ea78ded91b5d {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}

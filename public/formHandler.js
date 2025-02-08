@@ -37,8 +37,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('numerologyForm');
+    // Add base URL configuration at the top
+    var BASE_URL = window.location.origin;
+    var API_URL = process.env.NODE_ENV === 'production'
+        ? "".concat(BASE_URL, "/api/numerology")
+        : 'http://localhost:1490/api/numerology';
     form.addEventListener('submit', function (event) { return __awaiter(_this, void 0, void 0, function () {
-        var nameInput, dateInput, name, dateOfBirth, data, response, result, error_1;
+        var nameInput, dateInput, name, dateOfBirth, data, response, result, redirectPath, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -59,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 6, , 7]);
-                    return [4 /*yield*/, fetch('https://mapa-site-84fa1.web.app/api/numerology', {
+                    return [4 /*yield*/, fetch(API_URL, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -74,8 +79,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     result = _a.sent();
                     // Armazenar o resultado no localStorage
                     localStorage.setItem('numerologyResult', JSON.stringify(result));
-                    // Redirecionar para a nova página
-                    window.location.href = 'result.html';
+                    redirectPath = "".concat(BASE_URL, "/result");
+                    try {
+                        window.location.href = redirectPath;
+                    }
+                    catch (redirectError) {
+                        console.error('Redirect failed:', redirectError);
+                        alert('Erro ao redirecionar. Por favor, tente novamente.');
+                    }
                     return [3 /*break*/, 5];
                 case 4:
                     console.error('Erro na requisição:', response.statusText);

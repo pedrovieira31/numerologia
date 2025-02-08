@@ -1,0 +1,32 @@
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/favicon.ico","query":{},"timestamp":"2025-02-07T23:45:55.299Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/result","query":{},"timestamp":"2025-02-07T23:57:17.739Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/favicon.ico","query":{},"timestamp":"2025-02-07T23:57:18.682Z"}
+{"body":{"date":"1990-01-01","name":"teste"},"level":"info","message":"Incoming Request","method":"POST","path":"/api/numerology","query":{},"timestamp":"2025-02-08T00:01:46.916Z"}
+{"body":{"date":"1990-01-01","name":"teste"},"level":"info","message":"Processing numerology calculation","timestamp":"2025-02-08T00:01:46.919Z"}
+{"level":"info","message":"Calculation successful","response":{"C1":3,"C2":4,"C3":9,"CD":7,"D1":1,"D2":6,"DM":5,"EU":5,"IR1":11,"IR2":3,"IR3":4,"IR4":5,"IRR2":3,"IRR3":4,"MO":1,"R1":7,"R2":4,"R3":2,"R4":3,"personalYear":7},"timestamp":"2025-02-08T00:01:46.920Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/","query":{},"timestamp":"2025-02-08T00:10:35.216Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/formHandler.js","query":{},"timestamp":"2025-02-08T00:10:35.243Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/NumerologyChart.css","query":{},"timestamp":"2025-02-08T00:10:35.244Z"}
+{"body":{"date":"1990-01-01","name":"teste"},"level":"info","message":"Incoming Request","method":"POST","path":"/api/numerology","query":{},"timestamp":"2025-02-08T00:10:40.478Z"}
+{"body":{"date":"1990-01-01","name":"teste"},"level":"info","message":"Processing numerology calculation","timestamp":"2025-02-08T00:10:40.478Z"}
+{"level":"info","message":"Calculation successful","response":{"C1":3,"C2":4,"C3":9,"CD":7,"D1":1,"D2":6,"DM":5,"EU":5,"IR1":11,"IR2":3,"IR3":4,"IR4":5,"IRR2":3,"IRR3":4,"MO":1,"R1":7,"R2":4,"R3":2,"R4":3,"personalYear":7},"timestamp":"2025-02-08T00:10:40.479Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/NumerologyChart.css","query":{},"timestamp":"2025-02-08T00:11:27.092Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/","query":{},"timestamp":"2025-02-08T00:16:24.782Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/NumerologyChart.css","query":{},"timestamp":"2025-02-08T00:16:24.807Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/formHandler.js","query":{},"timestamp":"2025-02-08T00:16:24.808Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/","query":{"date":"1990-01-01","name":"teste"},"timestamp":"2025-02-08T00:16:37.056Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/NumerologyChart.css","query":{},"timestamp":"2025-02-08T00:16:37.074Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/formHandler.js","query":{},"timestamp":"2025-02-08T00:16:37.075Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/NumerologyChart.css","query":{},"timestamp":"2025-02-08T00:16:45.678Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/","query":{"date":"1990-01-01","name":"teste"},"timestamp":"2025-02-08T00:16:51.783Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/NumerologyChart.css","query":{},"timestamp":"2025-02-08T00:16:51.812Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/formHandler.js","query":{},"timestamp":"2025-02-08T00:16:51.814Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/","query":{"date":"1990-01-01","name":"teste"},"timestamp":"2025-02-08T00:17:59.510Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/NumerologyChart.css","query":{},"timestamp":"2025-02-08T00:17:59.544Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/formHandler.js","query":{},"timestamp":"2025-02-08T00:17:59.545Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/","query":{},"timestamp":"2025-02-08T00:18:02.943Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/NumerologyChart.css","query":{},"timestamp":"2025-02-08T00:18:02.994Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/formHandler.js","query":{},"timestamp":"2025-02-08T00:18:02.996Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/","query":{"date":"1990-01-01","name":"teste"},"timestamp":"2025-02-08T00:18:08.918Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/NumerologyChart.css","query":{},"timestamp":"2025-02-08T00:18:08.967Z"}
+{"body":{},"level":"info","message":"Incoming Request","method":"GET","path":"/formHandler.js","query":{},"timestamp":"2025-02-08T00:18:08.972Z"}
